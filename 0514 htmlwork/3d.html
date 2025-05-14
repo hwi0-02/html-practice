@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NAVER 로그인</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      border: 1px solid black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .login{
+      width: 350px;
+      padding: 40px 30px;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .login h2 {
+      text-align: center;
+      color: #03c75a;
+      margin-bottom: 30px;
+      font-size: 28px;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+
+    .checkbox{
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+      font-size: 14px;
+    }
+
+    .checkbox input {
+      margin-right: 8px;
+    }
+
+    .login-btn {
+      width: 100%;
+      padding: 12px;
+      background-color: #7e7e7e;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease-in-out;
+    }
+
+   
+
+  </style>
+</head>
+<body>
+  <div class="login">
+    <h2>NAVER</h2>
+    <form>
+      <input type="text" id="id" name="id" placeholder="아이디 또는 전화번호" />
+      <input type="password" id="password" name="password" placeholder="비밀번호" />
+
+      <div class="checkbox">
+        <input type="checkbox" id="keep-login" />
+        로그인 상태 유지
+      </div>
+      <div class="ip-btn">
+        IP보안 <input type="button" value="ON">
+      </div>
+
+      <input type="submit" class="login-btn" value="로그인" />
+    </form>
+
+
+  </div>
+</body>
+</html>

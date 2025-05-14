@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            border: 1px solid black;
+            /* width: 50%; */
+            font-size: 50px;
+            display: flex;
+            flex-wrap: wrap;
+            /* 문제) display:flex와 flex-wrap:wrap을 사용하지 않고 자동 줄바꿈하는 방법 */
+            /*  word-wrap: break-word; overflow-wrap: break-word; */
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <span>abcdefghiafdf434243242424234242423423434242342424afk</span>
+        <span>1234242412412414324234242424232</span>
+        <span>abcdefghiafdfaffsdffsfsfsfsfsfsk</span>
+        <span>12342424124124124343424234434324</span>
+        <span>abcdefghiafdfafk</span>
+        <span>1234242412412412</span>
+        <span>abcdefghiafdfafk</span>
+        <span>1234242412412412</span>
+    </div>
+
+    <div class="box2"  style="font-size: 100px;">
+        ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
+    </div>
+    <style>
+        .box2{
+            border: 1px solid red;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+    </style>
+</body>
+</html>
