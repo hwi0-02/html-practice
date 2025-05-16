@@ -1,0 +1,28 @@
+ul>li{menu$}*4 = ul 태그 안에 li 태그를 4개 만들고, 각각의 li 안에 텍스트 menu1, menu2, menu3, menu4를 넣는 코드
+
+li{menu}*4 = li 태그 안에 menu라는 텍스트를 4개 반복 출력하는 의미이다.
+
+console.log(변수); = 콘솔에 오류를 보여주는 코드
+
+defer = HTML 문서를 파싱하는 동안에도 스크립트 파일을 비동기적으로 다운로드하되, HTML 파싱이 끝난 후에 스크립트를 실행하라는 의미
+
+ fetch(`${element.innerText}.html`)
+        .then(resp => resp.text())
+        .then(result=>{
+            let main = document.querySelector("main");
+            main.innerHTML=result;
+        })
+ //공부할 것
+
+
+
+
+
+
+
+
+
+
+
+
+
