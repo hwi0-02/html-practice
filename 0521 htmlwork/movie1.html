@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>일별 박스오피스</title>
+    <style>
+        p {
+            border: 1px solid black; 
+            text-align: center;
+            background-color: green;
+            padding: 10px;
+            color: white;
+            font-weight: bold;
+        }
+
+        .dateandbtn {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px 0;
+            gap: 10px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            text-align: center;
+        }
+
+        li {
+            padding: 5px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <p>일별 박스 오피스</p>
+
+    <div class="dateandbtn">
+        <input type="date" id="inputbox"> 
+        <button onclick="find()">확인</button>
+    </div>
+
+    <div>
+        <ul id="list">
+            <!-- 결과가 여기에 들어감 -->
+        </ul>
+    </div>
+
+    <script>
+        function find() {
+            const inputbox = document.getElementById("inputbox");
+            const selectedDate = inputbox.value;
+
+            if (!selectedDate) {
+                alert("날짜를 선택해주세요.");
+                return;
+            }
+
+            // 날짜를 yyyymmdd 형식으로 변환
+            const date = new Date(selectedDate);
+            const yyyy = date.getFullYear();
+            const mm = String(date.getMonth() + 1).padStart(2, '0');
+            const dd = String(date.getDate()).padStart(2, '0');
+            const targetDt = `${yyyy}${mm}${dd}`;
+
+            const apikey = "b3b5b14e85a0a1aefead38009015341e";
+            const url = `https://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=${apikey}&targetDt=${targetDt}`;
+
+            const xhttp = new XMLHttpRequest();
+            xhttp.open("GET", url);
+            xhttp.send();
+
+            xhttp.onload = function () {
+                const data = JSON.parse(xhttp.responseText);
+
+                if (!data.boxOfficeResult) {
+                    alert("데이터를 불러올 수 없습니다.");
+                    return;
+                }
+
+                const list = data.boxOfficeResult.dailyBoxOfficeList;
+                const ul = document.getElementById("list");
+                ul.innerHTML = ""; // 기존 목록 초기화
+
+                for (let i = 0; i < list.length; i++) {
+                    const li = document.createElement("li");
+                    li.textContent = `${i + 1} 위: ${list[i].movieNm}`;
+                    ul.appendChild(li);
+                }
+            };
+        }
+    </script>
+</body>
+</html>
