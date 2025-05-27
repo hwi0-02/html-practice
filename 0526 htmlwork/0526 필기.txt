@@ -1,0 +1,24 @@
+객체는 속성과 함수로 구성되어있다.
+속성=값
+함수();
+
+window
+window.속성=값(사용방법)
+window.함수();
+
+window.document
+
+window.location
+
+window.history
+
+alert(text) = 경고 다이얼로그 박스를 표시
+
+
+| 메서드/속성                  | 기능            |
+| ----------------------- | ------------- |
+| `substring(start, end)` | 문자열 자르기       |
+| `indexOf(value)`        | 특정 문자의 인덱스 찾기 |
+| `charAt(index)`         | 특정 인덱스의 문자 추출 |
+| `trim()`                | 양쪽 공백 제거      |
+| `length`                | 문자열 길이 확인     |
